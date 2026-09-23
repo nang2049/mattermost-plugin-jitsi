@@ -40,6 +40,7 @@ module.exports = {
         'react-bootstrap': 'ReactBootstrap',
         'react-router-dom': 'ReactRouterDom'
     },
+    devtool: false,
     output: {
         path: path.join(__dirname, '/dist'),
         publicPath: '/',
