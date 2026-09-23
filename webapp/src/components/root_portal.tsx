@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import {createRoot, Root} from 'react-dom/client';
 import {Provider} from 'react-redux';
 
 import Conference from './conference/';
@@ -19,6 +19,7 @@ export class InjectionProvider extends React.Component<any> {
 export default class RootPortal {
     el: HTMLElement;
     store: any;
+    root: Root | null = null;
 
     constructor(registry: any, store: any) {
         this.el = document.createElement('div');
@@ -32,22 +33,26 @@ export default class RootPortal {
     }
 
     cleanup() {
-        const rootPortal = document.getElementById('root-portal');
-        if (rootPortal) {
-            rootPortal.removeChild(this.el);
+        if (this.root) {
+            this.root.unmount();
+            this.root = null;
         }
+        this.el.remove();
     }
 
     render() {
         const rootPortal = document.getElementById('root-portal');
         if (rootPortal) {
-            ReactDOM.render((
+            if (!this.root) {
+                this.root = createRoot(this.el);
+            }
+            this.root.render(
                 <InjectionProvider store={this.store}>
                     <I18nProvider>
                         <Conference/>
                     </I18nProvider>
                 </InjectionProvider>
-            ), this.el);
+            );
         }
     }
 }
