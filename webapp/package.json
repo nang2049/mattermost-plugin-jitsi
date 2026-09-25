@@ -28,14 +28,15 @@
     "@babel/preset-typescript": "7.29.7",
     "@babel/runtime": "7.29.7",
     "@emotion/babel-preset-css-prop": "11.2.0",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/jest-dom": "6.8.0",
+    "@testing-library/react": "16.3.0",
     "@types/babel__core": "7.1.18",
     "@types/babel__template": "7.4.1",
-    "@types/enzyme": "3.10.5",
     "@types/jest": "29.5.14",
     "@types/node": "14.0.5",
-    "@types/react": "16.9.35",
-    "@types/react-dom": "18.0.11",
-    "@types/react-redux": "7.1.9",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.6",
     "@types/react-router-dom": "5.1.5",
     "@types/react-transition-group": "4.4.0",
     "@typescript-eslint/eslint-plugin": "5.10.1",
@@ -43,9 +44,6 @@
     "babel-jest": "29.7.0",
     "babel-loader": "9.2.1",
     "babel-plugin-typescript-to-proptypes": "2.1.0",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.2",
-    "enzyme-to-json": "3.5.0",
     "eslint": "8.8.0",
     "eslint-import-resolver-webpack": "0.12.1",
     "eslint-plugin-import": "2.25.4",
@@ -63,18 +61,14 @@
   "dependencies": {
     "core-js": "3.6.5",
     "mattermost-redux": "5.23.0",
-    "react": "16.14.0",
-    "react-intl": "4.6.3",
-    "react-redux": "7.2.0",
-    "redux": "4.0.5"
-  },
-  "overrides": {
-    "cheerio": "1.0.0-rc.12"
+    "prop-types": "15.8.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-intl": "7.1.14",
+    "react-redux": "9.2.0",
+    "redux": "5.0.1"
   },
   "jest": {
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/enzyme-to-json/serializer"
-    ],
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/non_npm_dependencies/"

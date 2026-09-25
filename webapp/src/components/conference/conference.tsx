@@ -252,13 +252,13 @@ export default class Conference extends React.PureComponent<Props, State> {
                         id='jitsi.move-down'
                         defaultMessage='Move down'
                     >
-                        {(text: string) => (
+                        {(text: React.ReactNode[]) => (
                             <i
                                 onClick={this.togglePosition}
                                 style={{transform: 'rotate(270deg)', display: 'inline-block'}}
                                 className='icon icon-arrow-left'
-                                aria-label={text}
-                                title={text}
+                                aria-label={String(text)}
+                                title={String(text)}
                             />
                         )}
                     </FormattedMessage>}
@@ -267,13 +267,13 @@ export default class Conference extends React.PureComponent<Props, State> {
                         id='jitsi.move-up'
                         defaultMessage='Move up'
                     >
-                        {(text: string) => (
+                        {(text: React.ReactNode[]) => (
                             <i
                                 onClick={this.togglePosition}
                                 style={{transform: 'rotate(90deg)', display: 'inline-block'}}
                                 className='icon icon-arrow-left'
-                                aria-label={text}
-                                title={text}
+                                aria-label={String(text)}
+                                title={String(text)}
                             />
                         )}
                     </FormattedMessage>}
@@ -282,12 +282,12 @@ export default class Conference extends React.PureComponent<Props, State> {
                         id='jitsi.minimize'
                         defaultMessage='Minimize'
                     >
-                        {(text: string) => (
+                        {(text: React.ReactNode[]) => (
                             <i
                                 onClick={this.minimize}
                                 className='icon icon-arrow-collapse'
-                                aria-label={text}
-                                title={text}
+                                aria-label={String(text)}
+                                title={String(text)}
                             />
                         )}
                     </FormattedMessage>}
@@ -296,12 +296,12 @@ export default class Conference extends React.PureComponent<Props, State> {
                         id='jitsi.maximize'
                         defaultMessage='Maximize'
                     >
-                        {(text: string) => (
+                        {(text: React.ReactNode[]) => (
                             <i
                                 onClick={this.maximize}
                                 className='icon icon-arrow-expand'
-                                aria-label={text}
-                                title={text}
+                                aria-label={String(text)}
+                                title={String(text)}
                             />
                         )}
                     </FormattedMessage>}
@@ -316,12 +316,12 @@ export default class Conference extends React.PureComponent<Props, State> {
                         id='jitsi.open-in-new-tab'
                         defaultMessage='Open in new tab'
                     >
-                        {(text: string) => (
+                        {(text: React.ReactNode[]) => (
                             <i
                                 style={{transform: 'rotate(135deg)', display: 'inline-block'}}
                                 className='icon icon-arrow-left'
-                                aria-label={text}
-                                title={text}
+                                aria-label={String(text)}
+                                title={String(text)}
                             />
                         )}
                     </FormattedMessage>
@@ -330,12 +330,12 @@ export default class Conference extends React.PureComponent<Props, State> {
                     id='jitsi.close'
                     defaultMessage='Close'
                 >
-                    {(text: string) => (
+                    {(text: React.ReactNode[]) => (
                         <i
                             onClick={this.close}
                             className='icon icon-close'
-                            aria-label={text}
-                            title={text}
+                            aria-label={String(text)}
+                            title={String(text)}
                         />
                     )}
                 </FormattedMessage>
