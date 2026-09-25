@@ -231,5 +231,25 @@ describe('Conference', () => {
             wasFilmStrip: true,
             isFilmStrip: true
         });
+
+        instance.escFunction({keyCode: 27});
+        expect(api.executeCommand).toBeCalledTimes(1);
+    });
+
+    it('should ignore Escape when no meeting is open', () => {
+        const {instance} = renderConference();
+
+        expect(() => instance.escFunction({keyCode: 27})).not.toThrow();
+        expect(defaultProps.actions.openJitsiMeeting).not.toBeCalled();
+        expect(defaultProps.actions.setUserStatus).not.toBeCalled();
+    });
+
+    it('should close the meeting on Escape when a meeting is open', () => {
+        const {instance} = renderConference();
+        const api = {executeCommand: jest.fn(), dispose: jest.fn()};
+        instance.api = api;
+
+        instance.escFunction({keyCode: 27});
+        expect(api.executeCommand).toBeCalledWith('hangup');
     });
 });

@@ -65,7 +65,7 @@ export default class Conference extends React.PureComponent<Props, State> {
 
     escFunction = (event: any) => {
         // '27' == escape key
-        if (event.keyCode === 27) {
+        if (event.keyCode === 27 && this.api) {
             this.close();
         }
     };
@@ -202,6 +202,7 @@ export default class Conference extends React.PureComponent<Props, State> {
             });
             if (this.api) {
                 this.api.dispose();
+                this.api = null;
             }
         }, 200);
     };
