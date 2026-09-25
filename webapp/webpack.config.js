@@ -30,6 +30,9 @@ module.exports = {
     externals: {
         react: 'React',
         'react-dom': 'ReactDOM',
+        'react-dom/client': 'ReactDOM',
+        'react/jsx-runtime': 'ReactJSXRuntime',
+        'react/jsx-dev-runtime': 'ReactJSXDevRuntime',
         'react-intl': 'ReactIntl',
         redux: 'Redux',
         'react-redux': 'ReactRedux',
@@ -37,6 +40,7 @@ module.exports = {
         'react-bootstrap': 'ReactBootstrap',
         'react-router-dom': 'ReactRouterDom'
     },
+    devtool: false,
     output: {
         path: path.join(__dirname, '/dist'),
         publicPath: '/',
